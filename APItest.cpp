@@ -7,7 +7,7 @@
 
 // int main() 
 // {
-// 	SearchEngine engine("3.138.141.182","crawler","12345678","crawler_db",3306,10);
+// 	SearchEngine engine("IP","dbusrname","key","dbname",3306,10);
 //     string query = "professor";
 //     auto hits = engine.search(query);
 //     if (hits.empty()) std::cout << "  no result\n\n";
@@ -97,11 +97,11 @@ int main(int argc, char* argv[])
         std::cerr << "Usage: " << argv[0] << " \"search query\"\n";
         return 1;
     }
-    // 支持多参数自动拼接为一个查询词（没加引号也能用）
+    
     std::string query = join_args(argc, argv, 1);
 
-    // 你的构造参数保持不变
-    SearchEngine engine("18.118.114.135","crawler","12345678","crawler_db",3306,10);
+    
+    SearchEngine engine("IP","dbusrname","key","dbname",3306,10);
 
     auto hits = engine.search(query);
 
@@ -117,7 +117,7 @@ int main(int argc, char* argv[])
         });
     }
 
-    // 紧凑输出；若想美观可改成 j.dump(2)
+    
     std::cout << j.dump(2) << std::endl;
     return 0;
 }
