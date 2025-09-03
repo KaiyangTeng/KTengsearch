@@ -1,6 +1,9 @@
 # Distributed Search Engine System
 
 A comprehensive, high-performance distributed search engine built from scratch using C++, featuring web crawling, inverted indexing, document retrieval, and ranking algorithms. The system supports real-time web crawling, efficient document indexing, and fast search queries with sub-100ms response times.
+<p align="center">
+  <img src="images/example.png" width="600"/>
+</p>
 
 ## Features
 
