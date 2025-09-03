@@ -18,7 +18,7 @@
 constexpr long long MAX_URLS = 1000;                        // 成功 URL 目标
 static RateLimiter limiter(1, std::chrono::seconds(1));
 // 将下面的参数替换为你的 MySQL 地址、用户名、密码、数据库名和端口
-static DB_manager db( "18.219.206.82", "crawler","12345678","crawler_db",3306);
+static DB_manager db( "IP", "dbusrname","key","dbname",3306);
 
 /* ---------- Lua 脚本：原子 LPUSH ---------- */
 const char* LUA_PUSH = R"(
@@ -46,7 +46,7 @@ bool try_push(redisContext* r, const std::string& task) {
 
 int main() {
     /* 1. 连接 Redis */
-    redisContext* redis = redisConnect("18.219.206.82", 6379);
+    redisContext* redis = redisConnect("IP", 6379);
     if (!redis || redis->err) {
         std::cerr << "Redis 连接失败: "
                   << (redis ? redis->errstr : "Unknown error")
