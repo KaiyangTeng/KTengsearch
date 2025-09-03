@@ -1,0 +1,1 @@
+g++ -std=c++11 mainbfs.cpp HTML_getter.cpp URL_getter.cpp URL_filter.cpp LinkFetcher.cpp URL_checker.cpp RateLimiter.cpp DB_manager.cpp -I./gumbo-parser/src ./gumbo-parser/.libs/libgumbo.a -lcurl -lsqlite3 -o mainout
